@@ -1,9 +1,12 @@
 export const dynamic = 'force-dynamic'
+
 import { redirect } from 'next/navigation'
 import { supabase } from '@/utils/supabase'
 
 export default async function RedirectPage({ params }) {
-  const { id } = params
+  // Karena Next.js terbaru, params harus di-await terlebih dahulu
+  const resolvedParams = await params
+  const { id } = resolvedParams
 
   const { data, error } = await supabase
     .from('cards')
