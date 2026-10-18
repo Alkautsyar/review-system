@@ -1,9 +1,7 @@
-
 import { redirect } from 'next/navigation'
 import { supabase } from '@/utils/supabase'
 
 export default async function RedirectPage({ params }) {
-  // Karena Next.js terbaru, params harus di-await terlebih dahulu
   const resolvedParams = await params
   const { id } = resolvedParams
 
