@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation'
-import { supabase } from '@/utils/supabase'
+import { supabase } from '../../../utils/supabase'
 
 export default async function RedirectPage({ params }) {
   const resolvedParams = await params
